@@ -9,7 +9,7 @@ a.navbar-brand {
 }
 
 .navbar {
-  background-color: #2d8af5;
+  background-color: #2d8af5 !important;
 }
 
 .nav-item {
