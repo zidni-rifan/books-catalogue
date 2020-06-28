@@ -47,11 +47,7 @@ namespace BooksCatalogue.Controllers
         // POST: Review/AddReview
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddReview([Bind("Id,BookId,ReviewerName,Rating,Comment")] Review review)
-        {
-
-            return View(review);
-        }
+        public IActionResult AddReview([Bind("Id,BookId,ReviewerName,Rating,Comment")] Review review) => View(review);
 
         private ActionResult ErrorAction(string message)
         {
