@@ -11,7 +11,7 @@ a.navbar-brand {
   background-color: #2d8af5 !important;
 }
 
-.nav-item,
+.nav-link,
 .navbar-brand {
   color: white !important;
 }
