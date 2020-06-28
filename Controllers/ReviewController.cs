@@ -10,7 +10,7 @@ namespace BooksCatalogue.Controllers
 {
     public class ReviewController : Controller
     {
-        private string apiEndpoint = "https://bookscatalogueapi.azurewebsites.net/api/books/";
+        private string apiEndpoint = "https://bookscatalogueapi.azurewebsites.net/api/review/";
 
         public ReviewController() {
         }
