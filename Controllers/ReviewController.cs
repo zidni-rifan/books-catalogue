@@ -43,12 +43,34 @@ namespace BooksCatalogue.Controllers
             }
         }
 
-        // TODO: Tambahkan fungsi ini untuk mengirimkan atau POST data review menuju API
+       // TODO: Tambahkan fungsi ini untuk mengirimkan atau POST data review menuju API
         // POST: Review/AddReview
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult AddReview([Bind("Id,BookId,ReviewerName,Rating,Comment")] Review review) => View(review);
-
+        public async Task<IActionResult> AddReview([Bind("Id,BookId,ReviewerName,Rating,Comment")] [FromForm] Review review)
+        {
+            MultipartFormDataContent content = new MultipartFormDataContent();
+ 
+            content.Add(new StringContent(review.BookId.ToString()), "bookid");
+            content.Add(new StringContent(review.ReviewerName), "reviewername");
+            content.Add(new StringContent(review.Rating.ToString()), "rating");
+            content.Add(new StringContent(review.Comment), "comment");
+ 
+            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, apiEndpoint + "review/");
+            request.Content = content;
+            HttpResponseMessage response = await _client.SendAsync(request);
+            switch (response.StatusCode)
+            {
+                case HttpStatusCode.OK:
+                case HttpStatusCode.NoContent:
+                case HttpStatusCode.Created:
+                    int idbooks = review.BookId;
+                    return Redirect(baseurl + idbooks);
+                default:
+                    return ErrorAction("Error. Status code =" + response.StatusCode + "; " + response.ReasonPhrase);
+            }
+        }
+ 
         private ActionResult ErrorAction(string message)
         {
             return new RedirectResult("/Home/Error?message=" + message);
