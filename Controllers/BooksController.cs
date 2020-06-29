@@ -218,7 +218,7 @@ namespace BooksCatalogue.Controllers
                 case HttpStatusCode.Unauthorized:
                     return ErrorAction("Please sign in again. " + response.ReasonPhrase);
                 default:
-                    return ErrorAction(ViewBag.message = String.Format("Unnable Delete"));  
+                    return ErrorAction(ViewBag.message = String.Format("Unnable Delete, Please delete the reviews first"));  
             }
         }
        
