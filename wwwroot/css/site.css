@@ -16,11 +16,6 @@ a.navbar-brand {
   color: white !important;
 }
 
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
-}
-
 .books-title:hover,
 .text-muted:hover {
   font-weight: bold !important;
@@ -31,6 +26,11 @@ img.card-img-top.poster-book:hover {
   -moz-filter: brightness(50%) !important;
   -ms-filter: brightness(50%) !important;
   filter: brightness(30%) !important;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
 }
 
 .btn-primary {
