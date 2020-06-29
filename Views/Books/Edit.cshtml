@@ -4,11 +4,9 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
-
-<h4>Book</h4>
+<h1 class="text-center">Edit Book</h1>
 <hr />
-<div class="row">
+<div class="row justify-content-center">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -40,7 +38,7 @@
     </div>
 </div>
 
-<div>
+<div class="text-center">
     <a asp-controller="Books" asp-action="Details" asp-route-id="@Model.Id">Back</a>
 </div>
 
