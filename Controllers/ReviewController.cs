@@ -137,7 +137,7 @@ namespace BooksCatalogue.Controllers
             {
                 case HttpStatusCode.OK:
                 case HttpStatusCode.NoContent:
-                    return Redirect("https://bookscatalogueapi.azurewebsites.net");
+                    return Redirect("https://cataloguebooks.azurewebsites.net");
                 case HttpStatusCode.Unauthorized:
                     return ErrorAction("Please sign in again. " + response.ReasonPhrase);
                 default:
