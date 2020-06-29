@@ -181,7 +181,7 @@ namespace BooksCatalogue.Controllers
                 return NotFound();
             }
 
-            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, apiEndpoint+id);
+            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, apiEndpoint + id);
 
             HttpResponseMessage response = await _client.SendAsync(request);
 
@@ -196,11 +196,16 @@ namespace BooksCatalogue.Controllers
             }
         }
 
+       
         // POST: Books/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            
+            
+                        
             HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Delete, apiEndpoint + id);
 
             HttpResponseMessage response = await _client.SendAsync(request);
@@ -213,10 +218,10 @@ namespace BooksCatalogue.Controllers
                 case HttpStatusCode.Unauthorized:
                     return ErrorAction("Please sign in again. " + response.ReasonPhrase);
                 default:
-                    return ErrorAction("Error. Status code = " + response.StatusCode);
+                    return ErrorAction(ViewBag.message = String.Format("Unnable Delete"));  
             }
         }
-
+       
         private bool IsImage(IFormFile file)
         {
             if (file.ContentType.Contains("image"))
@@ -232,6 +237,10 @@ namespace BooksCatalogue.Controllers
         private ActionResult ErrorAction(string message)
         {
             return new RedirectResult("/Home/Error?message=" + message);
+        }
+        public IActionResult Search()
+        {
+            return View();
         }
     }
 }
