@@ -26,7 +26,7 @@ a {
   font-weight: bold !important;
 }
 
-.poster-book:hover {
+img.card-img-top.poster-book:hover {
   -webkit-filter: brightness(50%) !important;
   -moz-filter: brightness(50%) !important;
   -ms-filter: brightness(50%) !important;
