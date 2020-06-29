@@ -69,7 +69,7 @@ namespace BooksCatalogue.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
        
-        public async Task<IActionResult> AddReview([Bind("Id,BookId,ReviewerName,Rating,Comment")] [FromForm] Review review)
+        public async Task<IActionResult> AddReview([Bind("Id,BookId,Reviewer Name,Rating,Comment")] [FromForm] Review review)
         {
 
             _client = new HttpClient(clientHandler);
