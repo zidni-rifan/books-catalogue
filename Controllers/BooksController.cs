@@ -144,7 +144,7 @@ namespace BooksCatalogue.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (id == book.Id)
             {
                 var httpContent = new[] {
                     new KeyValuePair<string, string>("id", book.Id.ToString()),
