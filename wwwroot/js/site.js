@@ -13,11 +13,11 @@ const hoverStyle = `<style>
     }
 
     img.card-img-top.poster-book:hover {
-    -webkit-filter: brightness(50%) !important;
-    -moz-filter: brightness(50%) !important;
-    -ms-filter: brightness(50%) !important;
-    filter: brightness(30%) !important;
+    -webkit-filter: brightness(60%) !important;
+    -moz-filter: brightness(60%) !important;
+    -ms-filter: brightness(60%) !important;
+    filter: brightness(60%) !important;
     }
     </style>`;
 
-document.querySelector("head").appendChild(hoverStyle);
+document.querySelector("head").innerHTML += hoverStyle;
