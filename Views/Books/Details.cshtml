@@ -61,6 +61,11 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.Comment)
                             </td>
+                            <td>
+                                @Html.HiddenFor(modelItem => item.Id)
+                                @Html.HiddenFor(modelItem => item.BookId)
+                                <a asp-controller="Review"  asp-action="Delete" asp-route-id="@item.Id" asp-route-BookId ="@item.BookId"  class="btn btn-danger" role="button">Delete</a> 
+                            </td>
                         </tr>
                     }
                 </table>
