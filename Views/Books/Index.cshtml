@@ -10,17 +10,18 @@
     <a asp-action="Create" class="btn btn-primary">Create New</a>
 </p>
 
-<div class="card-columns">
+<div class="row justify-content-center">
     @foreach(var item in Model)
     {
-        <a asp-action="Details" asp-route-id="@item.Id" >
-            <div class="card" style="max-width: 18rem;">
-                <img src="@item.CoverURL" class="card-img" alt="Image Cover">
-                <div class="card-body">
-                    <h5 class="card-title text-dark">@item.Title</h5>
+        <a asp-action="Details" asp-route-id="@item.Id" class="card mt-2 mb-2 my-4 col-lg-2 col-md-3 col-sm-4 col-5">
+            <div class="text-center image">
+                <img src="@item.CoverURL" alt="@item.Title" 
+                    class="card-img-top poster-movie">
                 </div>
+                <div class="card-body">
+                    <h5 class="card-title">@item.Title</h5>
+                    <p class="card-subtitle mb-2 text-muted">by: @item.Author</p>
             </div>
         </a>
     }
 </div>
-
