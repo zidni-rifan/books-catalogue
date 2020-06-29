@@ -21,6 +21,11 @@ a {
   color: #0366d6;
 }
 
+.books-title:hover,
+.text-muted:hover {
+  font-weight: bold;
+}
+
 .btn-primary {
   color: #fff;
   background-color: #1b6ec2;
