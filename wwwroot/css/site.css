@@ -23,7 +23,14 @@ a {
 
 .books-title:hover,
 .text-muted:hover {
-  font-weight: bold;
+  font-weight: bold !important;
+}
+
+.poster-book:hover {
+  -webkit-filter: brightness(50%) !important;
+  -moz-filter: brightness(50%) !important;
+  -ms-filter: brightness(50%) !important;
+  filter: brightness(30%) !important;
 }
 
 .btn-primary {
