@@ -4,41 +4,43 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
-
-<div>
-    <h4>Book</h4>
-    <hr />
-    <img src="@Html.DisplayFor(model => model.CoverURL)" class="img-fluid" alt="Cover Image" style="margin: 20px;">
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Author)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Author)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Synopsis)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Synopsis)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ReleaseYear)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ReleaseYear)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Reviews)
-        </dt>
-        <dd class = "col-sm-10">
+    <div class="container">
+        <h1>Details</h1>
+        <h4>Book</h4>
+        <hr />
+        <div class="card mb-3 mt-4 details shadow">
+            <div class="row no-gutters">
+            <div class="col-md-4 text-center image">
+                <img
+                src="@Html.DisplayFor(model => model.CoverURL)"
+                class="card-img"
+                />
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                <h2 class="card-title text-primary">@Html.DisplayFor(model => model.Title)</h2>
+                <table class="table table-borderless">
+                    <tr>
+                    <th scope="row">@Html.DisplayNameFor(model => model.Author)</th>
+                    <td>@Html.DisplayFor(model => model.Author)</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">@Html.DisplayNameFor(model => model.ReleaseYear)</th>
+                    <td>@Html.DisplayFor(model => model.ReleaseYear)</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">@Html.DisplayNameFor(model => model.Synopsis)</th>
+                    <td>@Html.DisplayFor(model => model.Synopsis)</td>
+                    </tr>
+                </table>
+                </div>
+            </div>
+            </div>
+        </div>
+        <h3>
+        @Html.DisplayNameFor(model => model.Reviews)
+        </h3>
+        <div class = "col-sm-10 justify-content-md-center">
             @if (Model.Reviews.Count != 0)
             {
                 <table class="table">
@@ -71,11 +73,11 @@
                 // TODO: Tambahkan fungsi pada Controller dan View baru untuk menambahkan data review
             }
             <a class="btn btn-primary" asp-controller="Review" asp-action="AddReview" asp-route-bookId="@Model.Id" role="button">Add Review</a>
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Delete" asp-route-id="@Model.Id" class="text-danger">Delete</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+        </div>
+        <div>
+            <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+            <a asp-action="Delete" asp-route-id="@Model.Id" class="text-danger">Delete</a> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+
+    </div>
