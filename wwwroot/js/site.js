@@ -2,5 +2,6 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+
 document.querySelector("footer .container").classList.add("text-center");
 document.querySelector("ul.navbar-nav").classList = "navbar-nav ml-auto";
