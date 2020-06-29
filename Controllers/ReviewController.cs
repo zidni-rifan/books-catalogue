@@ -15,11 +15,11 @@ namespace BooksCatalogue.Controllers
 {
     public class ReviewController : Controller
     {
-        private string apiEndpoint = "https://bookscatalogueapi.azurewebsites.net//api/";
+        private string apiEndpoint = "https://bookscatalogueapi.azurewebsites.net/api/";
         public HttpClient _client;
         HttpClientHandler clientHandler = new HttpClientHandler();
 
-        public string baseUrl = "https://bookscatalogueapi.azurewebsites.net//Books/Details/";
+        public string baseUrl = "https://bookscatalogueapi.azurewebsites.net/Books/Details/";
         public ReviewController() {
             
             clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
